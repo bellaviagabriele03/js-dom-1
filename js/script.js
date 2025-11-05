@@ -5,11 +5,11 @@
 //dati da raccogliere :
 //immagine, pulsante ON, pulsante OFF
 
-const btnON = document.getElementById("button-on")
-const btnOFF = document.getElementById("button-off")
+const btnON = document.querySelector("#button-on")
+const btnOFF = document.querySelector("#button-off")
 let imgElem = document.querySelector("img");
 
-btnON.addEventListener("click", function() {
+btnON.addEventListener("click", function () {
     imgElem.src = "./img/yellow_lamp.png"
 })
 
@@ -35,23 +35,24 @@ const imgOR = document.getElementById("img-or")
 //ICONE BOOTSTRAP 
 const iconON = document.getElementById("icon-on")
 const iconOFF = document.getElementById("icon-off");
+const textElem = document.querySelector("text-btn");
 
 
-let isON = true;
+let isOFF = true;
 
 btnOR.addEventListener("click", function () {
-    if(isON === true) {
+    if (isOFF === true) {
         imgOR.src = "./img/yellow_lamp.png"
-        btnOR.innerHTML = "SPEGNI";
+        btnOR.innerText = "SPEGNI";
         btnOR.classList.remove("btn-success");
         btnOR.classList.add("btn-secondary")
-    }else {
+    } else {
         imgOR.src = "./img/white_lamp.png"
         btnOR.innerText = "Accendi";
         btnOR.classList.add("btn-success");
     }
-    isON = !isON;
-    
+    isOFF = !isOFF;
+
 })
 
 
